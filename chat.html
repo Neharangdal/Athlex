@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chatbot Assistant</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #e3f2fd;
+      font-family: Arial, sans-serif;
+    }
+
+    #chatbox {
+      width: 400px;
+      height: 500px;
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+
+    #header {
+      background-color: #2196F3;
+      color: white;
+      padding: 15px;
+      text-align: center;
+      font-size: 18px;
+    }
+
+    #messages {
+      flex-grow: 1;
+      padding: 10px;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .message {
+      max-width: 80%;
+      padding: 8px;
+      margin: 5px;
+      border-radius: 10px;
+      font-size: 14px;
+    }
+
+    .user {
+      align-self: flex-end;
+      background-color: #DCF8C6;
+    }
+
+    .bot {
+      align-self: flex-start;
+      background-color: #f1f1f1;
+    }
+
+    #input-area {
+      display: flex;
+      padding: 10px;
+      border-top: 1px solid #ddd;
+      background-color: white;
+    }
+
+    #userInput {
+      flex-grow: 1;
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      outline: none;
+    }
+
+    button {
+      padding: 8px 12px;
+      margin-left: 5px;
+      background-color: #2196F3;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #1E88E5;
+    }
+  </style>
+</head>
+<body>
+  <div id="chatbox"> 
+    <div id="header">Chatbot Assistant</div>
+    <div id="messages"></div>
+    <div id="input-area">
+      <input type="text" id="userInput" placeholder="Type a message..." onkeypress="handleKeyPress(event)" />
+      <button onclick="sendMessage()">Send</button>
+    </div>
+  </div>
+
+  <script>
+    let messagesDiv = document.getElementById("messages");
+
+    function sendMessage() {
+      let userMessage = document.getElementById("userInput").value;
+      if (userMessage.trim()) {
+        displayMessage('User', userMessage, 'user');
+        document.getElementById("userInput").value = '';
+        botResponse(userMessage);
+      }
+    }
+
+    function displayMessage(sender, message, type) {
+      const messageDiv = document.createElement('div');
+      messageDiv.classList.add('message', type);
+      messageDiv.innerHTML = `<strong>${sender}:</strong> ${message}`;
+      messagesDiv.appendChild(messageDiv);
+      messagesDiv.scrollTop = messagesDiv.scrollHeight;
+    }
+
+    function botResponse(userMessage) {
+      let botMessage = "I'm not sure how to answer that. Can you try asking something else?";
+
+      if (userMessage.toLowerCase().includes('hello')) {
+        botMessage = "Hello! How can I assist you today?";
+      } else if (userMessage.toLowerCase().includes('how are you')) {
+        botMessage = "I'm doing great, thank you for asking!";
+      } else if (userMessage.toLowerCase().includes('bye')) {
+        botMessage = "Goodbye! Have a great day!";
+      } else if (userMessage.toLowerCase().includes('track')) {
+        botMessage = "You have not ordered anything!";
+      }else if (userMessage.toLowerCase().includes('buy')) {
+        botMessage = "Tell me what do you want to buy!";
+      }  
+
+      setTimeout(() => {
+        displayMessage('Bot', botMessage, 'bot');
+      }, 1000);
+    }
+
+    function handleKeyPress(event) {
+      if (event.key === 'Enter') {
+        sendMessage();
+      }
+    }
+  </script>
+</body>
+</html>
