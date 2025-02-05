@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sportswear Accessories Store</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        /* Custom styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f8f9fa;
+        }
+        .navbar {
+            background-color: #343a40; /* Dark gray background */
+        }
+        .navbar-brand {
+            font-size: 24px;
+            font-weight: bold;
+            color: #ffffff; /* White text color */
+        }
+        .navbar-nav .nav-link {
+            color: #ffffff !important; /* White text color for menu items */
+        }
+        .navbar-nav .nav-link:hover {
+            color: #ffc107 !important; /* Yellow hover color for menu items */
+        }
+        .jumbotron {
+            background-image: url('https://footwearnews.com/wp-content/uploads/2021/12/Best-Running-Shoes-Plantar-Fasciitis-Lead.png');    
+            background-size: cover;
+            color: white; /* White text color */
+            text-align: center;
+            padding: 150px 0;
+            margin-bottom: 15px;
+            background-color: #365486;
+            box-shadow:0px 0px 20px rgba(0,0,0,0.5);
+        }
+        .jumbotron .container {
+            padding: 70px 0;
+            margin-bottom: 5px;
+        }
+        .jumbotron h1 {
+            font-size: 68px;
+            font-weight: bold;
+            margin-bottom: 30px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Text shadow for better readability */
+        }
+        .jumbotron h2 {
+            font-size: 24px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Text shadow for better readability */
+            margin-bottom: 30px;
+        }
+        .section-title {
+            font-size: 32px;
+            font-weight: bold;
+            margin-bottom: 30px;
+        }
+        .product-card {
+            background-color: #ffffff;
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            padding: 30px;
+            margin-bottom: 30px;
+        }
+        .product-card img {
+            max-width: 100%;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+        .product-card h2 {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .product-card p {
+            font-size: 16px;
+            color: #6c757d; /* Gray text color */
+            margin-bottom: 20px;
+        }
+        .product-card .btn {
+            background-color: #ffc107; /* Yellow button color */
+            color: #EEF5FF; /* White text color */
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            font-size: 16px;
+            transition: all 0.3s ease;
+        }
+        .product-card .btn:hover {
+            background-color: #ffcd39; /* Lighter yellow on hover */
+            color: #ffffff; /* White text color on hover */
+            transform: scale(1.05);
+        }
+        .footer {
+            background-color: #343a40; /* Dark gray background */
+            color: #ffffff; /* White text color */
+            text-align: center;
+            padding: 20px 0;
+        }
+        #about {
+         text-align: center;
+         padding: 50px 20px;
+         background-color: #f8f8f8;
+         border-radius: 10px;
+         margin: 20px;
+        }
+
+         #about h2 {
+         font-size: 2em;
+         color: #333;
+         margin-bottom: 10px;
+        }
+
+         #about h3 {
+         font-size: 1.5em;
+         color: #555;
+         margin-top: 20px;
+        }
+
+         #about p {
+         font-size: 1.1em;
+         color: #666;
+         max-width: 800px;
+         margin: 0 auto 15px;
+         }
+
+        #about ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        #about ul li {
+            font-size: 1.1em;
+            color: #444;
+            padding: 5px;
+        }
+        #aboutBtn {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 5px;
+        }
+
+        #aboutBtn:hover {
+            background-color: #0056b3;
+        }
+
+
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">Athlex</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="women.html">Women</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="men.html">Men</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="kids.html">Kids</a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="chat.html">Chatbot</a>
+                    </li>
+                    <!-- Add this span inside the "View Cart" button in the Navbar -->
+<li class="nav-item">
+    <button class="btn btn-warning" data-toggle="modal" data-target="#cartModal">
+        View Cart <span id="cartCount" class="badge badge-light">0</span>
+    </button>
+</li>
+
+                    <li class="nav-item ml-3">
+                        <button class="btn btn-light" data-toggle="modal" data-target="#authModal">Login / Signup</button>
+                    </li>
+                    <li class="nav-item ml-3">
+                        <a class="btn btn-light" href="#about">About Us</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+     <!-- Login/Signup Modal -->
+    <div class="modal fade" id="authModal" tabindex="-1" role="dialog" aria-labelledby="authModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="authModalLabel">Login</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <!-- Login Form -->
+                    <form id="loginForm">
+                        <div class="form-group">
+                            <label for="loginEmail">Email address</label>
+                            <input type="email" class="form-control" id="loginEmail" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="loginPassword">Password</label>
+                            <input type="password" class="form-control" id="loginPassword" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-block">Login</button>
+                    </form>
+
+                    <!-- Signup Form (Hidden Initially) -->
+                    <form id="signupForm" style="display: none;">
+                        <div class="form-group">
+                            <label for="signupName">Full Name</label>
+                            <input type="text" class="form-control" id="signupName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="signupEmail">Email address</label>
+                            <input type="email" class="form-control" id="signupEmail" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="signupPassword">Password</label>
+                            <input type="password" class="form-control" id="signupPassword" required>
+                        </div>
+                        <button type="submit" class="btn btn-success btn-block">Sign Up</button>
+                    </form>
+
+                    <p class="text-center mt-3">
+                        <a href="#" id="toggleAuth">Don't have an account? Sign up</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="cartMessage" class="alert alert-success text-center" style="display: none; position: fixed; top: 10px; right: 10px; z-index: 1000;">
+        Item added to cart successfully!
+    </div>    
+        <!-- Jumbotron -->
+        <div class="jumbotron">
+            <div class="container">
+                <h1>Welcome to our Sportswear Store</h1>
+                <h2>Discover the latest trends in sportswear, shoes, and accessories</h2>
+            </div>
+        </div>
+
+    <!-- Women's Section -->
+    <section id="women">
+        <div class="container">
+            <h2 class="section-title">Trending Women's Collection</h2>
+            <div class="row" id="womenProducts">
+                <!-- Women's products will be dynamically added here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Men's Section -->
+    <section id="men">
+        <div class="container">
+            <h2 class="section-title">Trending Men's Collection</h2>
+            <div class="row" id="menProducts">
+                <!-- Men's products will be dynamically added here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Kids' Section -->
+    <section id="kids">
+        <div class="container">
+            <h2 class="section-title">Trending Kids' Collection</h2>
+            <div class="row" id="kidsProducts">
+                <!-- Kids' products will be dynamically added here -->
+            </div>
+        </div>
+    </section>
+
+    <section id="about" style="padding: 50px 0; background-color: #f8f9fa;">
+        <div class="container">
+            <h2 class="text-center">About Us</h2>
+            <p class="text-center">Athlex is a leading brand in high-performance sportswear, offering top-quality apparel, shoes, and accessories for men, women, and kids.</p>
+            <p class="text-center">Our mission is to bring comfort, style, and durability to your fitness journey.</p>
+            <p class="text-center">We are dedicated to innovation and sustainability, ensuring that every product is designed with the latest technology and eco-friendly materials.</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <div id="contact" class="footer">
+        <div class="container">
+            <p>Contact us for any inquiries:</p>
+            <p><i class="fas fa-envelope"></i> info@Athlex.com</p>
+            <p><i class="fas fa-phone"></i> +1 (123) 456-7890</p>
+        </div>
+    </div>
+
+    <!-- Modal for View Cart -->
+    <div class="modal fade" id="cartModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Your Cart</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <!-- Cart items and total will be dynamically added here -->
+                    <ul id="cartItems"></ul>
+                    <p>Total: $<span id="totalAmount">0.00</span></p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-warning" onclick="checkout()">Checkout</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- JavaScript and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        // Sample product data for demonstration
+        const products = {
+            women: [
+                { name: 'Running Shoes', price: 99.99, image: 'https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/488cc6e0-8fc2-4e44-bc2d-891990853cc6/revolution-7-easyon-easy-on-off-road-running-shoes-3Qkr3d.png' },
+                { name: 'Training Apparel', price: 49.99, image: 'https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/285f6dd0-ad6d-4ce0-a7fe-e36446dd922a/sportswear-phoenix-fleece-overhead-hoodie-PMgglL.png' }
+            ],
+            men: [
+                { name: 'Gym Shorts', price: 29.99, image: 'https://rukminim2.flixcart.com/image/850/1000/xif0q/short/8/j/d/xl-mens-compression-shorts-for-gym-sportinger-original-imagmuamghx7zedg.jpeg?q=90&crop=false' },
+                { name: 'Running T-shirt', price: 34.99, image: 'https://static.nike.com/a/images/t_PDP_936_v1/f_auto,q_auto:eco/84bec6f3-af37-4c8d-b549-bc8c8aeafce7/AS+M+NK+DF+RUN+TOP+SS.png' }
+            ],
+            kids: [
+                { name: 'Kids Sports Shoes', price: 69.99, image: 'https://static.nike.com/a/images/t_PDP_936_v1/f_auto,q_auto:eco/641b661b-7075-4d87-a0e4-f5bfd136edf1/NIKE+FLEX+RUNNER+2+%28TDV%29.png' },
+                { name: 'Kids Sports Apparel', price: 39.99, image: 'https://static.nike.com/a/images/t_PDP_936_v1/f_auto,q_auto:eco/bddebab2-0797-4c40-ac9c-6b65bc8aa97f/K+NK+DF+TRPHY23+SS+TOP+GX.png' }
+            ]
+        };
+
+        // Dynamic product display
+        function displayProducts() {
+            const womenProductsContainer = document.getElementById('womenProducts');
+            const menProductsContainer = document.getElementById('menProducts');
+            const kidsProductsContainer = document.getElementById('kidsProducts');
+
+            products.women.forEach((product) => {
+                const div = document.createElement('div');
+                div.classList.add('col-md-4');
+                div.innerHTML = `
+                    <div class="product-card">
+                        <img src="${product.image}" alt="${product.name}">
+                        <h2>${product.name}</h2>
+                        <p>$${product.price}</p>
+                        <button class="btn" onclick="addToCart('${product.name}', ${product.price})">Add to Cart</button>
+                    </div>
+                `;
+                womenProductsContainer.appendChild(div);
+            });
+
+            products.men.forEach((product) => {
+                const div = document.createElement('div');
+                div.classList.add('col-md-4');
+                div.innerHTML = `
+                    <div class="product-card">
+                        <img src="${product.image}" alt="${product.name}">
+                        <h2>${product.name}</h2>
+                        <p>$${product.price}</p>
+                        <button class="btn" onclick="addToCart('${product.name}', ${product.price})">Add to Cart</button>
+                    </div>
+                `;
+                menProductsContainer.appendChild(div);
+            });
+
+            products.kids.forEach((product) => {
+                const div = document.createElement('div');
+                div.classList.add('col-md-4');
+                div.innerHTML = `
+                    <div class="product-card">
+                        <img src="${product.image}" alt="${product.name}">
+                        <h2>${product.name}</h2>
+                        <p>$${product.price}</p>
+                        <button class="btn" onclick="addToCart('${product.name}', ${product.price})">Add to Cart</button>
+                    </div>
+                `;
+                kidsProductsContainer.appendChild(div);
+            });
+        }
+
+       
+        let cart = [];
+let totalAmount = 0;
+let cartCount = 0; // Track number of items in cart
+
+// Function to add item to cart
+function addToCart(name, price) {
+    cart.push({ name, price });
+    totalAmount += price;
+    cartCount++; // Increment cart count
+    updateCart();
+    showCartMessage("Item added to cart successfully!");
+}
+
+// Function to remove item from cart
+function removeFromCart(index) {
+    totalAmount -= cart[index].price;
+    cart.splice(index, 1);
+    cartCount--; // Decrement cart count
+    updateCart();
+    showCartMessage("Item removed from cart!");
+}
+function showCartMessage(message) {
+    let cartMessage = document.getElementById('cartMessage');
+    cartMessage.innerText = message;
+    cartMessage.style.display = 'block';
+    setTimeout(() => {
+        cartMessage.style.display = 'none';
+    }, 2000);
+}
+// Function to update the cart UI
+function updateCart() {
+    const cartItemsContainer = document.getElementById("cartItems");
+    const totalAmountContainer = document.getElementById("totalAmount");
+    const cartCountBadge = document.getElementById("cartCount");
+
+    cartItemsContainer.innerHTML = "";
+    cart.forEach((item, index) => {
+        const li = document.createElement("li");
+        li.innerHTML = `${item.name} - $${item.price.toFixed(2)}
+            <button class="btn btn-danger btn-sm ml-2" onclick="removeFromCart(${index})">Remove</button>`;
+        cartItemsContainer.appendChild(li);
+    });
+
+    totalAmountContainer.innerText = totalAmount.toFixed(2);
+    cartCountBadge.innerText = cartCount; // Update cart count badge
+}
+        // Checkout function
+        function checkout() {
+            alert('Proceeding to checkout!');
+        }
+
+        // Display products when page loads
+        window.onload = displayProducts;
+
+        // Toggle between login and signup forms
+    document.getElementById('toggleAuth').addEventListener('click', function (e) {
+        e.preventDefault();
+        let loginForm = document.getElementById('loginForm');
+        let signupForm = document.getElementById('signupForm');
+        let modalTitle = document.getElementById('authModalLabel');
+
+        if (loginForm.style.display === "none") {
+            loginForm.style.display = "block";
+            signupForm.style.display = "none";
+            modalTitle.innerText = "Login";
+            this.innerText = "Don't have an account? Sign up";
+        } else {
+            loginForm.style.display = "none";
+            signupForm.style.display = "block";
+            modalTitle.innerText = "Sign Up";
+            this.innerText = "Already have an account? Login";
+        }
+    });
+
+    // Handle login form submission
+    document.getElementById('loginForm').addEventListener('submit', function (e) {
+        e.preventDefault();
+        let email = document.getElementById('loginEmail').value;
+        let password = document.getElementById('loginPassword').value;
+
+        if (email && password) {
+            alert("Login successful! (Demo only)");
+            $('#authModal').modal('hide'); // Close modal
+        } else {
+            alert("Please enter valid credentials.");
+        }
+    });
+
+    function toggleAbout() {
+        var aboutSection = document.getElementById("aboutUs");
+        console.log("Button Clicked! Current display:", aboutSection.style.display); // Debugging
+        
+        if (aboutSection.style.display === "none" || aboutSection.style.display === "") {
+            aboutSection.style.display = "block";
+        } else {
+            aboutSection.style.display = "none";
+        }
+    }
+
+    // Handle signup form submission
+    document.getElementById('signupForm').addEventListener('submit', function (e) {
+        e.preventDefault();
+        let name = document.getElementById('signupName').value;
+        let email = document.getElementById('signupEmail').value;
+        let password = document.getElementById('signupPassword').value;
+
+        if (name && email && password) {
+            alert("Signup successful! (Demo only)");
+            $('#authModal').modal('hide'); // Close modal
+        } else {
+            alert("Please fill all fields.");
+        }
+    });
+    document.getElementById("aboutBtn").addEventListener("click", function() {
+            var aboutSection = document.getElementById("aboutSection");
+            if (aboutSection.style.display === "none") {
+                aboutSection.style.display = "block"; // Show section
+            } else {
+                aboutSection.style.display = "none"; // Hide section
+            }
+        });
+    </script>
+
+</body>
+</html>
